@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Server port="8005" shutdown="SHUTDOWN">
+
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JasperListener" />
+<!--   <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" /> -->
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+<!--   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" /> -->
+<!--   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" /> -->
+<!-- 
+  <GlobalNamingResources>
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+ -->
+  <Service name="Catalina">
+<!-- 
+    <Executor name="tomcatThreadPool" namePrefix="tomcat-http-(RemoveTHIS)-" maxThreads="300" minSpareThreads="50"/>
+
+    <Connector
+               executor="tomcatThreadPool"
+               port="8080"
+               protocol="org.apache.coyote.http11.Http11AprProtocol"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               acceptCount="100"
+               maxKeepAliveRequests="15"/>
+
+    <Connector
+               executor="tomcatThreadPool"
+               port="8443"
+               protocol="org.apache.coyote.http11.Http11AprProtocol"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               acceptCount="100"
+               maxKeepAliveRequests="15"
+               SSLCertificateFile="${catalina.base}/conf/tcserver.crt"
+               SSLCertificateKeyFile="${catalina.base}/conf/tcserver.key"
+               SSLPassword="changeme"
+               SSLEnabled="true"
+               scheme="https"
+               secure="true"/>
+ -->
+    
+    <Connector
+               port="8080"
+               protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               acceptCount="100"
+               redirectPort="8443"
+               maxKeepAliveRequests="15"/>
+    <Connector
+               port="8443"
+               protocol="HTTP/1.1"
+               maxHttpHeaderSize="8192"
+               maxThreads="150"
+               minSpareThreads="25"
+               enableLookups="false"
+               disableUploadTimeout="true"
+               clientAuth="false"
+               sslProtocol="TLS"
+               useBodyEncodingForURI="true"
+               redirectPort="8443"
+               acceptCount="100"
+               maxKeepAliveRequests="15"
+               KeystorePass="testage"
+               SSLEnabled="true"
+               scheme="https"
+               secure="true"/>
+                   
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <!-- <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+             resourceName="UserDatabase"/> -->
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+      </Host>
+      <!--  deployOnStartup="true" deployXML="true"
+            xmlValidation="false" xmlNamespaceAware="false" -->
+      <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+               
+    </Engine>
+  </Service>
+</Server>
