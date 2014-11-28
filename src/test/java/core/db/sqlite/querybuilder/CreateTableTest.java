@@ -80,7 +80,7 @@ public class CreateTableTest {
 				+ "(pkey INT PRIMARY KEY NOT NULL,"
 				+ "UserName TEXT NOT NULL,"
 				+ "UserAge INT NOT NULL,"
-				+ "UserAverage REAL)";
+				+ "UserAverage REAL);";
 		assertEquals(expected, ct.toSQL());
 	}
 
