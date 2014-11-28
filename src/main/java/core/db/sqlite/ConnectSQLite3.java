@@ -7,6 +7,7 @@ public class ConnectSQLite3 {
 	private String dbURI = "";
 	private Connection conn = null;
 	private Statement stmt = null;
+	private boolean isTransaction = false;
 	
 	public ConnectSQLite3(String dbURI) {
 		this.dbURI = dbURI;
@@ -34,7 +35,7 @@ public class ConnectSQLite3 {
 	 */
 	public ResultSet executeQuery(String sqlStatement) throws Exception {
 		try {
-			
+
 			return this.stmt.executeQuery(sqlStatement);
 
 		} catch (SQLException e) {
@@ -53,11 +54,18 @@ public class ConnectSQLite3 {
 	public int executeUpdate(String sqlStatement) throws SQLException {
 		
 		try {
+			if(isTransaction) {
+				sqlStatement = "BEGIN TRANSACTION;" + sqlStatement + "END TRANSACTION;";
+			}
 			return this.stmt.executeUpdate(sqlStatement);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new SQLException(this.getClass().getPackage().getName() + " executeQuery\n" + e.getMessage());
 		}
+	}
+	
+	public void setTranscaction() {
+		this.isTransaction = true;
 	}
 	
 	public void closeConnection() {
