@@ -15,7 +15,8 @@
         <option value="">[ Select Database Manager ]</option>
         <option value="SQLilte3">SQLite3</option>
     </select></td></tr>
-    <tr><td><input type="password" placeholder="root account password" required="required" /></td></tr>
+    <tr><td><input type="email" name="email" placeholder="e-mail" required="required" /></td></tr>
+    <tr><td><input type="password" name="passwd" placeholder="root account password" required="required" /></td></tr>
     <tr><td><input type="password" placeholder="confirm root account password" required="required" /></td></tr>
     <tr><td><input type="submit" value="Initialize"/></td></tr>
 </table>
