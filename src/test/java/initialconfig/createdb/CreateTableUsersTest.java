@@ -1,6 +1,7 @@
 package initialconfig.createdb;
 
 import static org.junit.Assert.*;
+import initialconfig.createdb.create.CreateTableUsers;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +9,7 @@ import org.junit.Test;
 public class CreateTableUsersTest {
 
 	CreateTableUsers table;
-	String expected = "CREATE TABLE USERS (UID INT PRIMARY KEY NOT NULL,FirstName TEXT NOT NULL,LastName TEXT NOT NULL,login TEXT NOT NULL,eMail TEXT NOT NULL,PassWord BLOB NOT NULL,IV INT NOT NULL)";
+	String expected = "CREATE TABLE USERS (UID INT PRIMARY KEY NOT NULL,FirstName TEXT NOT NULL,LastName TEXT NOT NULL,login TEXT NOT NULL,eMail TEXT NOT NULL,PassWord BLOB NOT NULL,IV INT NOT NULL);";
 	
 	@Before
 	public void setUp() throws Exception {
