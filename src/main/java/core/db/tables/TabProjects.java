@@ -1,8 +1,8 @@
-package core.db.sqlite.field;
+package core.db.tables;
 
 public enum TabProjects {
 
-	PID("ID"),
+	PID("PID"),
 	NAME("ProjectName"),
 	DESCRIPTION("Description"),
 	WEEKLEY_TIME("WeekleyTime");

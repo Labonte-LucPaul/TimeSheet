@@ -1,8 +1,8 @@
-package core.db.sqlite.field;
+package core.db.tables;
 
 public enum TabUsers {
 
-	UID("ID"),
+	UID("UID"),
 	FIRST_NAME("FirstName"),
 	LAST_NAME("LastName"),
 	LOGIN("login"),

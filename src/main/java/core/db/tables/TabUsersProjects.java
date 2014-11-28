@@ -1,12 +1,12 @@
-package core.db.sqlite.field;
+package core.db.tables;
 
-public enum UsersProjects {
+public enum TabUsersProjects {
 
 	UID("UID"),
 	PID("PID");
 	
 	private String str;
-	private UsersProjects(String s) {
+	private TabUsersProjects(String s) {
 		str = s;
 	}
 	
