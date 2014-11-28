@@ -62,8 +62,10 @@ public class ConnectSQLite3 {
 	
 	public void closeConnection() {
 		try {
-			stmt.close();
-			conn.close();
+			if(!stmt.isClosed())
+				stmt.close();
+			if(!conn.isClosed())
+				conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
