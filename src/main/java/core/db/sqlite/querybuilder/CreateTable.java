@@ -62,7 +62,7 @@ public class CreateTable extends BuildSQLInstruction {
 			}
 		}
 		
-		sql.append(")");
+		sql.append(");");
 		
 		return sql.toString();
 	}
