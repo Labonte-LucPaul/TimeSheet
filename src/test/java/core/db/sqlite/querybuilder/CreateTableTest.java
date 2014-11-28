@@ -28,7 +28,7 @@ public class CreateTableTest {
 	@Test
 	public void testSetPrimaryKey() {
 		ct.setPrimaryKey("pkey");
-		String expected = "pkey INT PRIMARY KEY NOT NULL,";
+		String expected = "pkey INTEGER PRIMARY KEY AUTOINCREMENT,";
 		assertEquals("Primary key does not match", expected, ct.getSQLPrimaryKey());
 	}
 
@@ -77,7 +77,7 @@ public class CreateTableTest {
 	public void testToSQL() {
 		createTable();
 		String expected = "CREATE TABLE TableTest "
-				+ "(pkey INT PRIMARY KEY NOT NULL,"
+				+ "(pkey INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ "UserName TEXT NOT NULL,"
 				+ "UserAge INT NOT NULL,"
 				+ "UserAverage REAL);";
@@ -95,7 +95,7 @@ public class CreateTableTest {
 	@Test
 	public void testGetSQLPrimaryKey() {
 		ct.setPrimaryKey("pkey");
-		String expected = "pkey INT PRIMARY KEY NOT NULL,";
+		String expected = "pkey INTEGER PRIMARY KEY AUTOINCREMENT,";
 		assertEquals("Primary key does not match", expected, ct.getSQLPrimaryKey());
 	}
 

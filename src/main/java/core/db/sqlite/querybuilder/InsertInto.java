@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import core.db.sqlite.field.Field;
-
 public class InsertInto extends BuildSQLInstruction {
 
 	private String tableName;

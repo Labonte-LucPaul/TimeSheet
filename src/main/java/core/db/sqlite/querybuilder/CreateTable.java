@@ -71,7 +71,7 @@ public class CreateTable extends BuildSQLInstruction {
 		if(this.primaryKey.isEmpty()) {
 			return "";
 		}
-		return (this.primaryKey + " INT PRIMARY KEY NOT NULL,");
+		return (this.primaryKey + " INTEGER PRIMARY KEY AUTOINCREMENT,");
 	}
 	
 	protected String buildFieldsSQL(CreatingField cf) {
