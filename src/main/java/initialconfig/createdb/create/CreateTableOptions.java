@@ -1,4 +1,4 @@
-package initialconfig.createdb;
+package initialconfig.createdb.create;
 
 import core.db.sqlite.querybuilder.CreateTable;
 import core.db.tables.TabOptions;
