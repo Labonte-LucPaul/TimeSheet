@@ -11,8 +11,8 @@
     <div>
         <p>Login<p>
         <form action="/login" method="POST">
-            <input type="text" required="required" placeholder="Login"/><br>
-            <input type="password" required="required" placeholder="Password"/><br>
+            <input type="text" name="login" required="required" placeholder="Login"/><br>
+            <input type="password" name="passwd" required="required" placeholder="Password"/><br>
             <input type="submit" title="Login"/>
         </form>
     </div>
