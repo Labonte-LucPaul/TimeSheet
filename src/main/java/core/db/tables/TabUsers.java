@@ -8,7 +8,9 @@ public enum TabUsers {
 	LOGIN("login"),
 	PASSWD("PassWord"),
 	IV("IV"),
-	EMAIL("eMail");
+	EMAIL("eMail"),
+	DEPARTEMENT("Departement"),
+	ACCESS_LEVEL("AccessLevel");
 	
 	private String str;
 	private TabUsers(String s) {

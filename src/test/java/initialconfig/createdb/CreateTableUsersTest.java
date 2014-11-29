@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CreateTableUsersTest {
 
 	CreateTableUsers table;
-	String expected = "CREATE TABLE USERS (UID INTEGER PRIMARY KEY AUTOINCREMENT,FirstName TEXT NOT NULL,LastName TEXT NOT NULL,login TEXT NOT NULL,eMail TEXT NOT NULL,PassWord BLOB NOT NULL,IV INT NOT NULL);";
+	String expected = "CREATE TABLE USERS (UID INTEGER PRIMARY KEY AUTOINCREMENT,FirstName TEXT NOT NULL,LastName TEXT NOT NULL,login TEXT NOT NULL,eMail TEXT NOT NULL,PassWord BLOB NOT NULL,IV INT NOT NULL,Departement TEXT NOT NULL,AccessLevel INT NOT NULL);";
 	
 	@Before
 	public void setUp() throws Exception {
