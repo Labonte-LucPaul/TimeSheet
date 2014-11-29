@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import core.db.sqlite.field.Field;
-public class InsertInto extends BuildSQLInstruction {
+public class InsertInto {
 
 	private String tableName;
 	private String condition;
@@ -36,7 +36,6 @@ public class InsertInto extends BuildSQLInstruction {
 		this.fields.add(new Field(columnName, Double.toString(real)));
 	}
 
-	@Override
 	public String toSQL() {
 		
 		StringBuilder sqlColName = new StringBuilder();

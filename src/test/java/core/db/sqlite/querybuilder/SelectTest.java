@@ -48,7 +48,6 @@ public class SelectTest {
 	public void testToSQL_condition() {
 		select = null;
 		select = new Select("test", false);
-		select.setCondition("ID = 1");
 		init();
 		
 		String expected = "SELECT ID,FirstName,LastName,Address FROM test WHERE ID = 1;";

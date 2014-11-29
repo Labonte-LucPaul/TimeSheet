@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 import core.db.sqlite.field.Field;
 
-public class Update extends BuildSQLInstruction {
+public class Update {
 	
 	private String tableName;
 	private String condition;
@@ -36,8 +36,7 @@ public class Update extends BuildSQLInstruction {
 	public void updateREAL(String columnName, double newValue) {
 		this.columns.add(new Field(columnName, Double.toString(newValue)));
 	}
-	
-	@Override
+
 	public String toSQL() {
 		StringBuilder sql = new StringBuilder();
 		Iterator<Field> it = this.columns.iterator();

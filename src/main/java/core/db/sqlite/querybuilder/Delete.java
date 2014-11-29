@@ -1,6 +1,6 @@
 package core.db.sqlite.querybuilder;
 
-public class Delete extends BuildSQLInstruction {
+public class Delete {
 	
 	private String tableName;
 	private String condition;
@@ -9,8 +9,7 @@ public class Delete extends BuildSQLInstruction {
 		this.tableName = tableName;
 		this.condition = " WHERE " + condition;
 	}
-
-	@Override	
+	
 	public String toSQL() {
 		return ("DELETE FROM " + (this.tableName + (this.condition + ";")));
 	}

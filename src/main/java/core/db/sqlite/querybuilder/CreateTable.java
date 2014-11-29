@@ -6,7 +6,7 @@ import java.util.Iterator;
 import core.db.sqlite.field.CreatingField;
 import core.db.sqlite.field.FieldType;
 
-public class CreateTable extends BuildSQLInstruction {
+public class CreateTable {
 
 	private String tableName = "";
 	private String primaryKey = "";
@@ -44,8 +44,7 @@ public class CreateTable extends BuildSQLInstruction {
 	private void addField(CreatingField cf) {
 		this.fields.add(cf);
 	}
-	
-	@Override
+
 	public String toSQL() {
 		
 		StringBuilder sql = new StringBuilder();

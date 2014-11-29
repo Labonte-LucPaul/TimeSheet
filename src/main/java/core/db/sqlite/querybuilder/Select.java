@@ -3,15 +3,14 @@ package core.db.sqlite.querybuilder;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Select extends BuildSQLInstruction {
+public class Select extends ConditionBuilder {
 
 	private String tableName;
-	private String condition;
+
 	private ArrayList<String> columnName;
 	
 	public Select(String tableName) {
 		this.tableName = tableName;
-		this.condition = "";
 		this.columnName = new ArrayList<String>();
 	}
 	
@@ -26,12 +25,7 @@ public class Select extends BuildSQLInstruction {
 	public void addColumnName(String colName) {
 		this.columnName.add(colName);
 	}
-	
-	public void setCondition(String condition) {
-		this.condition = " WHERE " + condition;
-	}
-	
-	@Override
+
 	public String toSQL() {
 		StringBuilder sql = new StringBuilder();
 		Iterator<String> it = this.columnName.iterator();
@@ -47,7 +41,7 @@ public class Select extends BuildSQLInstruction {
 		
 		sql.append(" FROM ");
 		sql.append(this.tableName);
-		sql.append(this.condition);
+		sql.append(super.getCondition());
 		sql.append(";");
 		
 		return sql.toString();
