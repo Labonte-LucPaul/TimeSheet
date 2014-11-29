@@ -49,7 +49,9 @@ public class SelectTest {
 		select = null;
 		select = new Select("test", false);
 		init();
-		
+		ConditionEquals condition = new ConditionEquals("test");
+		condition.setField("ID", 1);
+		select.addCondition(condition);
 		String expected = "SELECT ID,FirstName,LastName,Address FROM test WHERE ID = 1;";
 		assertEquals(expected, select.toSQL());
 	}

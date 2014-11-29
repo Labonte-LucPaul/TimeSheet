@@ -17,7 +17,7 @@ public class ConditionEquals extends ColumnTypeSetters implements SQLCondition {
 
 	@Override
 	public String getConditionSQL() {
-		return ((" " + super.field.getFieldName()) + (" = " + (super.field.getFieldValue() + this.type.toString())));
+		return (super.field.getFieldName() + (" = " + (super.field.getFieldValue() + this.type.toString())));
 	}
 
 	@Override
