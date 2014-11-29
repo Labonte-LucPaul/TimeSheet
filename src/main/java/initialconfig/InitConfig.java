@@ -50,21 +50,21 @@ public class InitConfig extends HttpServlet {
 		conn.connect();
 		try {
 			StringBuilder str = new StringBuilder();
-			ResultSet result = conn.executeQuery("SELECT * FROM USERS;");
-			while(result.next()) {
-				str.append(result.getString(TabUsers.UID.toString()));
-				str.append(" | ");
-				str.append(result.getString(TabUsers.FIRST_NAME.toString()));
-				str.append(" | ");
-				str.append(result.getString(TabUsers.LAST_NAME.toString()));
-				str.append(" | ");
-				str.append(result.getString(TabUsers.LOGIN.toString()));
-				str.append(" | ");
-				str.append(result.getString(TabUsers.PASSWD.toString()));
-				str.append(" | ");
-				str.append(result.getString(TabUsers.EMAIL.toString()));
-			}
-			
+//			ResultSet result = conn.executeQuery("SELECT * FROM USERS;");
+//			while(result.next()) {
+//				str.append(result.getString(TabUsers.UID.toString()));
+//				str.append(" | ");
+//				str.append(result.getString(TabUsers.FIRST_NAME.toString()));
+//				str.append(" | ");
+//				str.append(result.getString(TabUsers.LAST_NAME.toString()));
+//				str.append(" | ");
+//				str.append(result.getString(TabUsers.LOGIN.toString()));
+//				str.append(" | ");
+//				str.append(result.getString(TabUsers.PASSWD.toString()));
+//				str.append(" | ");
+//				str.append(result.getString(TabUsers.EMAIL.toString()));
+//			}
+			str.append("<script type=\"text/javascript\">alert('testage');</script>");
 			OutputStream out = response.getOutputStream();
 			out.write(str.toString().getBytes());
 			out.flush();
