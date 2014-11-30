@@ -10,10 +10,18 @@ public class PopulateTableUsers extends PopulateTables {
 	
 	public PopulateTableUsers() {
 		this.insert = new InsertInto(Tables.USERS.toString());
-		insert.addText(TabUsers.FIRST_NAME.toString(), "root");
-		insert.addText(TabUsers.LAST_NAME.toString(), "root");
-		insert.addText(TabUsers.LOGIN.toString(), "root");
+		
+	}
+	
+	public void populateFields(String fName, String lName, String login, String email) {
+		insert.addText(TabUsers.FIRST_NAME.toString(), fName);
+		insert.addText(TabUsers.LAST_NAME.toString(), lName);
+		insert.addText(TabUsers.LOGIN.toString(), login);
+		insert.addText(TabUsers.EMAIL.toString(), email);
 		insert.addInteger(TabUsers.IV.toString(), 0);
+		insert.addText(TabUsers.DEPARTEMENT.toString(), "SysAdmin");
+		insert.addInteger(TabUsers.ACCESS_LEVEL.toString(), 1);
+		
 	}
 	
 	@Override

@@ -46,32 +46,21 @@ public class InitConfig extends HttpServlet {
 		CreateAndPopulateTables create = new CreateAndPopulateTables(request.getParameterMap());
 		create.execute();
 		
-		ConnectSQLite3 conn = new ConnectSQLite3(FilePath.DATABASE_SOURCE.toString());
-		conn.connect();
+		//ConnectSQLite3 conn = new ConnectSQLite3(FilePath.DATABASE_SOURCE.toString());
+		//conn.connect();
 		try {
 			StringBuilder str = new StringBuilder();
-//			ResultSet result = conn.executeQuery("SELECT * FROM USERS;");
-//			while(result.next()) {
-//				str.append(result.getString(TabUsers.UID.toString()));
-//				str.append(" | ");
-//				str.append(result.getString(TabUsers.FIRST_NAME.toString()));
-//				str.append(" | ");
-//				str.append(result.getString(TabUsers.LAST_NAME.toString()));
-//				str.append(" | ");
-//				str.append(result.getString(TabUsers.LOGIN.toString()));
-//				str.append(" | ");
-//				str.append(result.getString(TabUsers.PASSWD.toString()));
-//				str.append(" | ");
-//				str.append(result.getString(TabUsers.EMAIL.toString()));
-//			}
-			str.append("<script type=\"text/javascript\">alert('testage');</script>");
+
+			str.append("<script type=\"text/javascript\">alert('Initialization completed successfully.\nRedirecting to login page.');");
+			str.append("window.location.assign(\"login.jsp\");");
+			str.append("</script>");
+			
 			OutputStream out = response.getOutputStream();
 			out.write(str.toString().getBytes());
 			out.flush();
 			out.close();
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

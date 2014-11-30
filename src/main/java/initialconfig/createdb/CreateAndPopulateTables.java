@@ -39,8 +39,8 @@ public class CreateAndPopulateTables {
 	}
 
 	private void populate() {
+		populateUsers.populateFields(args.get("firstName")[0], args.get("lastName")[0], args.get("login")[0], args.get("email")[0]);
 		populateUsers.addValue(TabUsers.PASSWD.toString(), args.get("passwd")[0]);
-		populateUsers.addValue(TabUsers.EMAIL.toString(), args.get("email")[0]);
 	}
 	
 	private void generateSQL() {

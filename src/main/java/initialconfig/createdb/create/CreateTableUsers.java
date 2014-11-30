@@ -31,7 +31,7 @@ public class CreateTableUsers extends CreateTables {
 		table.addTextField(TabUsers.EMAIL.toString(), "", false);
 		table.addBLOBField(TabUsers.PASSWD.toString(), "", false);
 		table.addIntegerField(TabUsers.IV.toString(), 0, false);
-		table.addTextField(TabUsers.DEPARTEMENT.toString(), "", false);
+		table.addTextField(TabUsers.DEPARTEMENT.toString(), "", true);
 		table.addIntegerField(TabUsers.ACCESS_LEVEL.toString(), 0, false);
 	}
 	
