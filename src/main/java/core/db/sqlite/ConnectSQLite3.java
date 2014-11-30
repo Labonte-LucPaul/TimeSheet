@@ -1,6 +1,7 @@
 package core.db.sqlite;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ConnectSQLite3 {
 	
@@ -8,6 +9,7 @@ public class ConnectSQLite3 {
 	private Connection conn = null;
 	private Statement stmt = null;
 	private boolean isTransaction = false;
+	private ResultSet resultSet = null;
 	
 	public ConnectSQLite3(String dbURI) {
 		this.dbURI = dbURI;
@@ -35,8 +37,8 @@ public class ConnectSQLite3 {
 	 */
 	public ResultSet executeQuery(String sqlStatement) throws Exception {
 		try {
-
-			return this.stmt.executeQuery(sqlStatement);
+			this.resultSet = stmt.executeQuery(sqlStatement);
+			return this.resultSet;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -77,5 +79,14 @@ public class ConnectSQLite3 {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean isResultSetEmpty() {
+		try {
+			return !this.resultSet.isBeforeFirst();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 }
