@@ -52,7 +52,7 @@ public class InitConfig extends HttpServlet {
 			StringBuilder str = new StringBuilder();
 
 			str.append("<script type=\"text/javascript\">alert('Initialization completed successfully.\nRedirecting to login page.');");
-			str.append("window.location.assign(\"login.jsp\");");
+			str.append("window.location.assign(\"initprojects.jsp\");");
 			str.append("</script>");
 			
 			OutputStream out = response.getOutputStream();
