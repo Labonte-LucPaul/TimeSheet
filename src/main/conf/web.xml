@@ -16,7 +16,6 @@
     <servlet-name>logout</servlet-name>
     <servlet-class>login.Logout</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>InitConfig</servlet-name>
     <url-pattern>/InitConfig</url-pattern>

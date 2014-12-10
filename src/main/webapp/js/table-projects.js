@@ -58,3 +58,7 @@ function removeRow(tableName, rowID) {
 	index = row.rowIndex;
 	table.deleteRow(index);
 }
+
+function json() {
+	
+}

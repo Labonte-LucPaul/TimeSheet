@@ -36,5 +36,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Luc/.m2/repository/org/json/json/20141113/json-20141113.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

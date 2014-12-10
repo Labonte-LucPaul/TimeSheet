@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
-table.editable {
+table.editable, td {
 	border-collapse:collapse;
 	border: 1px solid black;
-	border-bottom: black;
 }
+

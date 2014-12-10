@@ -1,4 +1,4 @@
-package login;
+package requests.login;
 
 import java.io.IOException;
 import java.io.OutputStream;
