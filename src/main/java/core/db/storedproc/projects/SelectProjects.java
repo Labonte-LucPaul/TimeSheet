@@ -30,9 +30,10 @@ public class SelectProjects {
 			ResultSet rs = conn.executeQuery(this.sql);
 			ResultSet2JSON rs2j = new ResultSet2JSON(rs);
 			this.json = rs2j.getJSON();
-		} catch (Exception e) {
 
+		} catch (Exception e) {
 			e.printStackTrace();
+			
 		} finally {
 			conn.closeConnection();
 		}

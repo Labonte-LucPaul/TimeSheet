@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 function httpSend(url, json) {
 	
@@ -11,13 +8,14 @@ function httpSend(url, json) {
 		if(request.readyState === 4 && request.status === 200) {
 	        confirmation = request.responseText;
 	    } else {
-
+	    	
 	    }
 	}
 	
 	request.open("POST", url, true);
 	request.setRequestHeader("Content-Type", "application/json");
-	request.send(json);
+	var strJson = JSON.stringify(json);
+	request.send(strJson);
 	
 	return confirmation;
 }

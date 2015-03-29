@@ -46,12 +46,10 @@ public class InitConfig extends HttpServlet {
 		CreateAndPopulateTables create = new CreateAndPopulateTables(request.getParameterMap());
 		create.execute();
 		
-		//ConnectSQLite3 conn = new ConnectSQLite3(FilePath.DATABASE_SOURCE.toString());
-		//conn.connect();
 		try {
 			StringBuilder str = new StringBuilder();
 
-			str.append("<script type=\"text/javascript\">alert('Initialization completed successfully.\nRedirecting to login page.');");
+			str.append("<script type=\"text/javascript\">alert('Initialization completed successfully.Redirecting to login page.');");
 			str.append("window.location.assign(\"initprojects.jsp\");");
 			str.append("</script>");
 			

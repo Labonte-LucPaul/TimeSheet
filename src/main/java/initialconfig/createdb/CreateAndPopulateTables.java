@@ -1,5 +1,6 @@
 package initialconfig.createdb;
 
+import initialconfig.createdb.create.CreateTableProjects;
 import initialconfig.createdb.create.CreateTableUsers;
 import initialconfig.createdb.populate.PopulateTableUsers;
 
@@ -20,6 +21,7 @@ public class CreateAndPopulateTables {
 	private ConnectSQLite3 conn;
 	
 	private CreateTableUsers users;
+	private CreateTableProjects projects;
 	
 	private PopulateTableUsers populateUsers;
 	
@@ -27,6 +29,8 @@ public class CreateAndPopulateTables {
 		this.args = args;
 		this.SQLs = new ArrayList<String>();
 		this.users = new CreateTableUsers();
+	
+		this.projects = new CreateTableProjects();
 		
 		populateUsers = new PopulateTableUsers();
 	}
@@ -46,6 +50,7 @@ public class CreateAndPopulateTables {
 	private void generateSQL() {
 		addToList(users.create());
 		addToList(populateUsers.getSQL());
+		addToList(projects.create());
 	}
 	
 	private void addToList(String sql) {

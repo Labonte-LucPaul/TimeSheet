@@ -20,7 +20,6 @@ import core.db.tables.Tables;
 /**
  * Servlet implementation class Login
  */
-@WebServlet(asyncSupported = true, description = "Class that authenticate.", urlPatterns = { "/login" })
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

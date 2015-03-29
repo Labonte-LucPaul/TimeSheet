@@ -23,21 +23,42 @@
       <td><input type="text" id="projectName" placeholder="Project Name"/></td>
       <td><input type="text" id="projectDescription" placeholder="Project Description"/></td>
       <td><input type="text" id="weekleyTime" placeholder="Weekley Time (ex: 37.5)"/></td>
-      <td><a href="javascript:addRow('projects')"><img alt="add" src="../img/default/24x24/add_24x24.png"></a></td>
+      <td><a href="javascript:saveChanges('projects');"><img alt="add" src="../img/default/24x24/add_24x24.png"></a></td>
   </tr>
   </table>
-    <button title="Save" value="Save" onclick="saveChanges()">Save</button>
+<!--     <button title="Save" value="Save" onclick="saveChanges();">Save</button> -->
 </div>
 
 <script type="text/javascript">
 loadTable();
 
 function loadTable() {
-	var json = httpRequest("/getProjects");
+	var json = httpRequest("/getProjects", function(json) {fillTable(json);});
 }
 
-function saveChanges() {
-	alert('asdf');
+function fillTable(json) {
+	var size = json.length;
+	
+	for(var i = 0; i < size; ++i) {
+		insert(json[i], 'projects');
+	}
+}
+
+function saveChanges(project) {
+	var json = addRow(project);
+	if(json !== null) {
+		httpSend("/UpdateProjects", json);
+	}
+}
+
+function remove(tableName, id) {
+	
+	var jo = {};
+    jo.projectname = id;
+	
+    httpSend("/DeleteProject", jo);
+    
+	removeRow(tableName, id);
 }
 </script>
 </body>
